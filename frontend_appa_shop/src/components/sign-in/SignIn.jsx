@@ -56,6 +56,10 @@ function Signin() {
                 <DynaButton type="submit">
                     Sign In
                 </DynaButton>
+
+                <DynaButton type="submit">
+                    Sign in With Google
+                </DynaButton>
             </form>
             
         </div>
