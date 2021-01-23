@@ -1,0 +1,16 @@
+.dynamic-button{
+    height: 50px;
+    width: 160px;
+    background-color: black;
+    border: black 2px solid;
+    color: blanchedalmond;
+    font-size: 15px;
+    transition: ease-in 300ms;
+
+}
+
+.dynamic-button:hover {
+    background-color: white;
+    opacity: 0.6;
+    transition: ease-in 300ms;
+}
