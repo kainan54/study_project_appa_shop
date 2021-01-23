@@ -21,8 +21,21 @@
 .nav-options {
     display: flex;
     justify-content: space-between;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .nav-option {
     padding: 25px;
+}
+
+a:visited {
+     text-decoration: none; color:black; 
+}
+a:hover, a:active { 
+    text-decoration: none; color:green 
+}
+
+.nav-options:hover { 
+    text-decoration: none; color:red;
 }

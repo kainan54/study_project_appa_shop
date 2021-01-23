@@ -1,15 +1,17 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './DynaButton.css';
 
-function DynaButton({children, ...otherProps}) {
-
+function DynaButton({children, isGoogle, history, staticContext, ...otherProps}) {
 
     return(
-        <button className="dynamic-button" {...otherProps}>
+        <button 
+            className={`${isGoogle ? 'dyna-btn-google' : 'dyna-btn'}`}
+            {...otherProps}
+        >
             {children}
-            {console.log(children)}
         </button>
     );
 };
 
-export default DynaButton;
+export default withRouter(DynaButton);

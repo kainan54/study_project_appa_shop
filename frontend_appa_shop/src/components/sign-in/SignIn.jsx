@@ -57,9 +57,11 @@ function Signin() {
                     Sign In
                 </DynaButton>
 
-                <DynaButton type="submit">
-                    Sign in With Google
-                </DynaButton>
+                <a href="http://localhost:3000/auth/google_oauth2">
+                    <DynaButton type="button" isGoogle>
+                        Sign in With Google
+                    </DynaButton>
+                </a>
             </form>
             
         </div>

@@ -1,14 +1,29 @@
-.dynamic-button{
+.dyna-btn{
     height: 50px;
     width: 160px;
-    background-color: black;
     border: black 2px solid;
+    background-color: black;
     color: blanchedalmond;
     font-size: 15px;
     transition: ease-in 300ms;
 }
 
-.dynamic-button:hover {
+.dyna-btn-google {
+    height: 50px;
+    width: 160px;
+    border: #4c8bf5 2px solid;
+    background-color: #4c8bf5;
+    color: blanchedalmond;
+    font-size: 15px;
+    transition: ease-in 300ms;
+}
+
+.dyna-btn:hover {
+    background-color: white;
+    opacity: 0.6;
+    transition: ease-in 300ms;
+}
+.dyna-btn-google:hover {
     background-color: white;
     opacity: 0.6;
     transition: ease-in 300ms;

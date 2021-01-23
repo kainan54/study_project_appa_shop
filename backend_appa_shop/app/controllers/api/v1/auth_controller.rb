@@ -1,7 +1,9 @@
 class Api::V1::AuthController < ApplicationController
-    # skip_before_action :authorized, only: [:create]
-  
-    def create
+    include ActionController::Cookies
+    skip_before_action :authorized, only: [:authorize]
+
+    # either matches username and password or has data from googleOath2 callback
+    def authorize
         #coming from omniauth flow
       if request.env['omniauth.auth']
         @googleUser = request.env['omniauth.auth'] 
@@ -10,11 +12,17 @@ class Api::V1::AuthController < ApplicationController
 
         if @user
           token = encode_token({ user_id: @user.id })
-          render json: { user: UserSerializer.new(@user), jwt: token }, status: :accepted
+          
+          cookies[:appaShop] = token;
+          redirect_to 'http://localhost:3001/'
+
+
         else
           @user = User.create(email: @googleUser.info.email, password: BCrypt::Password.create(('a'..'z').to_a.shuffle[0,8].join), uid: @googleUser.uid)
           token = encode_token({ user_id: @user.id })
-          render json: { user: UserSerializer.new(@user), jwt: token }, status: :accepted
+
+          cookies[:appaShop] = token;
+          redirect_to 'http://localhost:3001/'
         end
 
       else
