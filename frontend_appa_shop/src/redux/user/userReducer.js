@@ -14,7 +14,7 @@ const userReducer = function (prevState=INIT_STATE, action) {
     
     switch (action.type) {
         case 'SET_USER':
-            console.log('inreduce', action.payload)
+
             return { 
                 ...prevState, 
                 currentUser: action.payload 
