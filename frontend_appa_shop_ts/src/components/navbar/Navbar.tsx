@@ -5,6 +5,8 @@ import { connect, ConnectedProps } from 'react-redux';
 import Cookies from 'js-cookie';
 import { ReactComponent as Logo } from './logo.svg';
 import { setCurrentUser } from '../../redux/user/userActions';
+import CartIcon from '../cart-icon/CartIcon';
+import CartDropMenu from '../cart-drop-menu/CartDropMenu';
 
 interface currentUser {
     email: string;
@@ -15,10 +17,14 @@ interface RootState {
     user: {
         currentUser: currentUser | null;
     };
+    cart: {
+        hidden: boolean;
+    };
 }
 
-const msp = (reduxState: RootState) => ({
-    currentUser: reduxState.user.currentUser,
+const msp = ({ user: { currentUser }, cart: { hidden } }: RootState) => ({
+    currentUser,
+    hidden,
 });
 
 const mdp = (dispatch: (action: { type: string; payload: currentUser | null }) => void) => ({
@@ -28,7 +34,7 @@ const mdp = (dispatch: (action: { type: string; payload: currentUser | null }) =
 const connector = connect(msp, mdp);
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
-const Navbar: React.FC<PropsFromRedux> = function ({ currentUser, setCurrentUser }) {
+const Navbar: React.FC<PropsFromRedux> = function ({ currentUser, setCurrentUser, hidden }) {
     //removes currentUser from redux store and removes corrosponding cookie containing token
     const logoutUser = () => {
         Cookies.remove('appaShop');
@@ -59,7 +65,10 @@ const Navbar: React.FC<PropsFromRedux> = function ({ currentUser, setCurrentUser
                         sign-in
                     </Link>
                 )}
+
+                <CartIcon />
             </div>
+            {!hidden ? <CartDropMenu /> : null}
         </div>
     );
 };

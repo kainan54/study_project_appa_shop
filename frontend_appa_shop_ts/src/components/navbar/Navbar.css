@@ -20,13 +20,11 @@
 
 .nav-options {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     text-decoration: underline;
     cursor: pointer;
-}
-
-.nav-option {
-    padding: 25px;
+    width: 30%;
 }
 
 a:visited {

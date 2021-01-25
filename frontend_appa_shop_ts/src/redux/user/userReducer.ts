@@ -18,7 +18,7 @@ interface User {
     email: string;
     id: number;
 }
-interface Action {
+export interface Action {
     type: string;
     payload: User | null;
 }
