@@ -1,0 +1,41 @@
+.nav {
+    display: flex;
+    height: 60px;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 7px;
+}
+
+.logo {
+    width: 100%;
+    height: 80%;
+}
+
+.nav-options {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.nav-option {
+    padding: 25px;
+}
+
+a:visited {
+     text-decoration: none; color:black; 
+}
+a:hover, a:active { 
+    text-decoration: none; color:green 
+}
+
+.nav-options:hover { 
+    text-decoration: none; color:red;
+}
