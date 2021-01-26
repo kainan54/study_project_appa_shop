@@ -20,5 +20,6 @@
 }
 
 button {
+    display: block;
     margin-top: auto;
 }

@@ -6,7 +6,9 @@ const CartDropMenu: React.FC = function () {
     return (
         <div className="cart-dropdown">
             <div className="cart-items"></div>
-            <DynaButton type="button">GO TO CHECKOUT</DynaButton>
+            <DynaButton inverted type="button">
+                GO TO CHECKOUT
+            </DynaButton>
         </div>
     );
 };
